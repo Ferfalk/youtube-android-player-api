@@ -16,19 +16,18 @@ This project makes adding `YouTube Android Player API` into your project in two 
 
 Add to the end of repositories:
 ```groovy
-    allprojects {
-        repositories {
-            ...
-            maven { url "https://jitpack.io" }
-        }
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
     }
+}
 ```
 
 Add dependency:
 ```groovy
-    dependencies {
-        compile 'com.github.Ferfalk:youtube-android-player-api:1.2.2'
-    }
+dependencies {
+    compile 'com.github.Ferfalk:youtube-android-player-api:1.2.2'
+}
 ```
 ## Library website
 
