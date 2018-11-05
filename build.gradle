@@ -1,21 +1,32 @@
-buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
+//region Build Script
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
-    }
+buildscript {
+  repositories {
+    apply from: "versions.gradle"
+    addRepos(repositories)
+  }
+
+  dependencies {
+    classpath deps.build.android_gradle_plugin
+  }
 }
+
+//endregion
+
+//region All Projects
 
 allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
+  repositories {
+    addRepos(repositories)
+  }
 }
 
+//endregion
+
+//region Tasks
+
 task clean(type: Delete) {
-    delete rootProject.buildDir
+  delete rootProject.buildDir
 }
+
+//endregion

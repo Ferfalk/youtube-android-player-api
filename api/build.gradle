@@ -1,16 +1,42 @@
-apply plugin: 'com.android.library'
+//region Startup Plugins
+
+apply plugin: "com.android.library"
+
+//endregion
+
+//region Android
 
 android {
-    compileSdkVersion 28
 
-    defaultConfig {
-        versionCode 1
-        versionName '1.2.2'
+  //region Compile Options
 
-        minSdkVersion 16
-    }
+  compileSdkVersion deps.build_versions.compile_sdk
+
+  //endregion
+
+  //region Default Config
+
+  defaultConfig {
+    versionCode deps.lib_versions.code
+    versionName deps.lib_versions.name
+    minSdkVersion deps.build_versions.min_sdk
+    targetSdkVersion deps.build_versions.target_sdk
+  }
+
+  //endregion
 }
+
+//endregion
+
+//region Dependencies
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+  //region Library Modules
+
+  implementation fileTree(dir: "libs", include: ["*.jar"])
+
+  //endregion
 }
+
+//endregion
